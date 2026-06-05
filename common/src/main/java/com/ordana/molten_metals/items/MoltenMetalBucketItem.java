@@ -13,13 +13,14 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 
 import java.lang.reflect.Field;
+import java.util.function.Supplier;
 
 public class MoltenMetalBucketItem extends ModBucketItem {
 
     private static final Field CONTENT = PlatHelper.findField(BucketItem.class, "content");
 
-    public MoltenMetalBucketItem(Fluid fluid, Properties properties) {
-        super(fluid, properties);
+    public MoltenMetalBucketItem(Supplier<? extends Fluid> fluid, Properties properties) {
+        super(fluid::get, properties);
     }
 
     @Override

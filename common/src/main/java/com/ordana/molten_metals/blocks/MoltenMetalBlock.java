@@ -20,9 +20,11 @@ import net.minecraft.world.level.material.FlowingFluid;
 import java.util.function.Supplier;
 
 public class MoltenMetalBlock extends LiquidBlock {
+    private final Supplier<FlowingFluid> fluidSupplier;
 
     public MoltenMetalBlock(Supplier<FlowingFluid> flowingFluid, Properties properties) {
-        super(flowingFluid, properties);
+        super(flowingFluid.get(), properties);
+        this.fluidSupplier = flowingFluid;
     }
 
     public boolean isRandomlyTicking(BlockState state) {
@@ -34,7 +36,7 @@ public class MoltenMetalBlock extends LiquidBlock {
     }
 
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!level.isClientSide && this.getFluid().isSame(ModFluids.MOLTEN_MERCURY.get())) {
+        if (!level.isClientSide && this.fluidSupplier.get().isSame(ModFluids.MOLTEN_MERCURY.get())) {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity)entity;
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 2));
@@ -45,14 +47,14 @@ public class MoltenMetalBlock extends LiquidBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         if (this.shouldSpreadLiquid(level, pos, state)) {
-            level.scheduleTick(pos, state.getFluidState().getType(), getFluid().getTickDelay(level));
+            level.scheduleTick(pos, state.getFluidState().getType(), this.fluidSupplier.get().getTickDelay(level));
         }
     }
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         if (this.shouldSpreadLiquid(level, pos, state)) {
-            level.scheduleTick(pos, state.getFluidState().getType(), getFluid().getTickDelay(level));
+            level.scheduleTick(pos, state.getFluidState().getType(), this.fluidSupplier.get().getTickDelay(level));
         }
     }
 
