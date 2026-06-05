@@ -146,6 +146,6 @@ public class ModBlocks {
 
     
     public static final Supplier<Block> SLAG_BLOCK = regWithItem("slag_block", () ->
-            new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK)));
 
 }

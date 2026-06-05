@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "deco",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_netherite_nuggets"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_netherite",
+      "amount": 16
+    }
+  ],
+  "heatRequirement": "heated"
+}

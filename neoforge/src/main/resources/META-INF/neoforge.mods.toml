@@ -1,0 +1,47 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="LGPLv3"
+
+[[mods]]
+modId="molten_metals"
+version="${version}"
+displayName="Molten Metals"
+logoFile="icon.png"
+authors="Ordana, Kayla_the_bee"
+description='''
+Melt down your metals and cast some ingots!
+'''
+
+[[dependencies.molten_metals]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.molten_metals]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.molten_metals]]
+modId="moonlight"
+type="required"
+versionRange="[${moonlight_version},)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.molten_metals]]
+modId="create"
+type="required"
+versionRange="[6.0.10,6.1.0)"
+ordering="NONE"
+side="BOTH"
+
+[[mixins]]
+config="molten_metals-common.mixins.json"
+
+[[mixins]]
+config="molten_metals.mixins.json"

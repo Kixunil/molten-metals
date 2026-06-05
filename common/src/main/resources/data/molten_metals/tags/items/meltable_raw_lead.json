@@ -2,16 +2,12 @@
   "replace": false,
   "values": [
     {
-      "id":"oreganized:raw_lead",
+      "id": "oreganized:raw_lead",
       "required": false
     },
     "create:crushed_raw_lead",
     {
       "id": "#c:lead_ores",
-      "required": false
-    },
-    {
-      "id": "#spelunkery:lead_ores",
       "required": false
     }
   ]

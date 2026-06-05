@@ -17,10 +17,6 @@
     {
       "id": "#c:silver_ores",
       "required": false
-    },
-    {
-      "id": "#spelunkery:silver_ores",
-      "required": false
     }
   ]
 }

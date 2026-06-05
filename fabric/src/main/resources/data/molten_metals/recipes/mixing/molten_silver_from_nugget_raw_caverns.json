@@ -3,8 +3,7 @@
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
-        "caverns_and_chasms",
-        "spelunkery"
+        "caverns_and_chasms"
       ]
     }
   ],

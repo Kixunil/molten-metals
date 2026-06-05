@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "oreganized",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "molten_metals:ingot_mold"
+    },
+    {
+      "fluid": "molten_metals:molten_silver",
+      "amount": 144
+    }
+  ],
+  "results": [
+    {
+      "item": "molten_metals:molten_silver_ingot_mold"
+    }
+  ]
+}

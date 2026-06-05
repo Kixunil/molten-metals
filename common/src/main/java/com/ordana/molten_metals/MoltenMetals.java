@@ -16,7 +16,7 @@ public class MoltenMetals {
     private static final String NAME = "molten_metals";
 
     public static ResourceLocation res(String name) {
-        return new ResourceLocation(MOD_ID, name);
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 
     public static void commonInit() {

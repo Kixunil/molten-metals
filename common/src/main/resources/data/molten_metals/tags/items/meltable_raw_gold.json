@@ -6,10 +6,6 @@
     {
       "id": "#c:gold_ores",
       "required": false
-    },
-    {
-      "id": "#spelunkery:gold_ores",
-      "required": false
     }
   ]
 }

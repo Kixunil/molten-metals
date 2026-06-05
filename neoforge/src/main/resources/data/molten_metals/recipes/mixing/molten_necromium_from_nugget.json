@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "caverns_and_chasms",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "caverns_and_chasms:necromium_nugget"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_necromium",
+      "amount": 16
+    }
+  ],
+  "heatRequirement": "heated"
+}

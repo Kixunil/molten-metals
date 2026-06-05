@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "caverns_and_chasms",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_raw_silver_blocks"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_silver",
+      "amount": 1296
+    },
+    {
+      "item": "molten_metals:slag_block"
+    }
+  ],
+  "heatRequirement": "heated"
+}

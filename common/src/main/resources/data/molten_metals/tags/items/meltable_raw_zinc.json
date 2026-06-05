@@ -6,10 +6,6 @@
     {
       "id": "#c:zinc_ores",
       "required": false
-    },
-    {
-      "id": "#spelunkery:zinc_ores",
-      "required": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "etcetera",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_bismuth"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_bismuth",
+      "amount": 144
+    }
+  ],
+  "heatRequirement": "heated"
+}

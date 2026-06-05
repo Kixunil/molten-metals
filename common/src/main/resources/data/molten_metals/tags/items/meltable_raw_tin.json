@@ -9,10 +9,6 @@
     {
       "id": "#c:tin_ores",
       "required": false
-    },
-    {
-      "id": "#spelunkery:tin_ores",
-      "required": false
     }
   ]
 }

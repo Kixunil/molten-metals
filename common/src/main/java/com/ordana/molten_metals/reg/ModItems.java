@@ -18,34 +18,34 @@ public class ModItems {
 
     //Buckets
     public static final Supplier<Item> MOLTEN_IRON_BUCKET = regItem("molten_iron_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_IRON.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_IRON, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_COPPER_BUCKET = regItem("molten_copper_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_COPPER.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_COPPER, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_GOLD_BUCKET = regItem("molten_gold_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_GOLD.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_GOLD, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_NETHERITE_BUCKET = regItem("molten_netherite_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_NETHERITE.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_NETHERITE, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_ZINC_BUCKET = regItem("molten_zinc_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_ZINC.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_ZINC, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_BRASS_BUCKET = regItem("molten_brass_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_BRASS.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_BRASS, (new Item.Properties().stacksTo(1))));
 
     public static final Supplier<Item> MOLTEN_SILVER_BUCKET = regItem("molten_silver_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_SILVER.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_SILVER, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_BISMUTH_BUCKET = regItem("molten_bismuth_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_BISMUTH.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_BISMUTH, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_MERCURY_BUCKET = regItem("molten_mercury_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_MERCURY.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_MERCURY, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_ELECTRUM_BUCKET = regItem("molten_electrum_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_ELECTRUM.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_ELECTRUM, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_NECROMIUM_BUCKET = regItem("molten_necromium_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_NECROMIUM.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_NECROMIUM, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_TIN_BUCKET = regItem("molten_tin_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_TIN.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_TIN, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_BRONZE_BUCKET = regItem("molten_bronze_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_BRONZE.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_BRONZE, (new Item.Properties().stacksTo(1))));
     public static final Supplier<Item> MOLTEN_STEEL_BUCKET = regItem("molten_steel_bucket", () ->
-        new MoltenMetalBucketItem(ModFluids.MOLTEN_STEEL.get(), (new Item.Properties().stacksTo(1))));
+        new MoltenMetalBucketItem(ModFluids.MOLTEN_STEEL, (new Item.Properties().stacksTo(1))));
 
     /*
     //Molds

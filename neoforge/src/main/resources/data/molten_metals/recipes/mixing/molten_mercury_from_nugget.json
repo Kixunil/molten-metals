@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_mercury_nuggets"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_mercury",
+      "amount": 16
+    }
+  ],
+  "heatRequirement": "heated"
+}

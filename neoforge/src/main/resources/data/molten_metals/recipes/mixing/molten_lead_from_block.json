@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "oreganized",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_lead_blocks"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "oreganized:molten_lead",
+      "amount": 1296
+    }
+  ],
+  "heatRequirement": "heated"
+}

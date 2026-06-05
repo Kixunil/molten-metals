@@ -1,8 +1,16 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "modid": "caverns_and_chasms",
-      "type": "forge:mod_loaded"
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "caverns_and_chasms"
+      ]
     }
   ],
   "type": "create:splashing",
@@ -16,7 +24,7 @@
       "item": "caverns_and_chasms:silver_ingot"
     },
     {
-      "chance": 0.80,
+      "chance": 0.8,
       "item": "molten_metals:ceramic_ingot_mold"
     }
   ]

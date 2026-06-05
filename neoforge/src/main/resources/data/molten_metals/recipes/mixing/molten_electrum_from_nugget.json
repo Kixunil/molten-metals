@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "modid": "oreganized",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "oreganized:electrum_nugget"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_electrum",
+      "amount": 16
+    }
+  ],
+  "heatRequirement": "heated"
+}
