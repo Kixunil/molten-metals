@@ -1,10 +1,6 @@
 {
   "conditions": [
     {
-      "modid": "spelunkery",
-      "type": "neoforge:mod_loaded"
-    },
-    {
       "modid": "oreganized",
       "type": "neoforge:mod_loaded"
     }

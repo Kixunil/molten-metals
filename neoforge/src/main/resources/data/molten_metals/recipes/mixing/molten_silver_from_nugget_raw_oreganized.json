@@ -3,10 +3,6 @@
     {
       "modid": "oreganized",
       "type": "neoforge:mod_loaded"
-    },
-    {
-      "modid": "spelunkery",
-      "type": "neoforge:mod_loaded"
     }
   ],
   "type": "create:mixing",
