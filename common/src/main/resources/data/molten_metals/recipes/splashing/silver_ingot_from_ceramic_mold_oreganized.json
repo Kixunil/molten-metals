@@ -5,6 +5,14 @@
       "type": "neoforge:mod_loaded"
     }
   ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "oreganized"
+      ]
+    }
+  ],
   "type": "create:splashing",
   "ingredients": [
     {
@@ -16,7 +24,7 @@
       "item": "oreganized:silver_ingot"
     },
     {
-      "chance": 0.80,
+      "chance": 0.8,
       "item": "molten_metals:ceramic_ingot_mold"
     }
   ]
