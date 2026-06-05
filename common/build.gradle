@@ -8,7 +8,8 @@ loom {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modImplementation("curse.maven:selene-499980:5367753")
+    modImplementation "dev.architectury:architectury:${rootProject.architectury_version}"
+    modImplementation "maven.modrinth:moonlight:${rootProject.moonlight_version}"
 }
 
 processResources {

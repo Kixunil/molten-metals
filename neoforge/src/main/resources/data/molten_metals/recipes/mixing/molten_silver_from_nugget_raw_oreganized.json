@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "modid": "oreganized",
+      "type": "neoforge:mod_loaded"
+    },
+    {
+      "modid": "spelunkery",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "molten_metals:meltable_raw_silver_nuggets"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "molten_metals:molten_silver",
+      "amount": 16
+    },
+    {
+      "item": "molten_metals:slag_nugget"
+    }
+  ],
+  "heatRequirement": "heated"
+}

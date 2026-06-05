@@ -2,7 +2,7 @@
   "conditions": [
     {
       "modid": "galosphere",
-      "type": "forge:mod_loaded"
+      "type": "neoforge:mod_loaded"
     }
   ],
   "type": "create:splashing",

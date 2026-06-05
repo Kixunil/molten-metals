@@ -1,8 +1,7 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.5-SNAPSHOT" apply false
-    id 'io.github.juuxel.loom-vineflower' version '1.11.0' apply false
-    id "com.github.johnrengelman.shadow" version "7.1.2" apply false
+    id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
+    id "com.github.johnrengelman.shadow" version "8.1.1" apply false
 }
 
 architectury {
@@ -21,7 +20,6 @@ subprojects {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
 
         mappings loom.layered() {
-
             it.parchment("org.parchmentmc.data:parchment-${rootProject.parchment_version}")
             it.officialMojangMappings {
                 setNameSyntheticMembers(false)
@@ -40,26 +38,32 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
-
         flatDir {
             dirs 'mods'
         }
 
         mavenLocal()
         maven { url "https://maven.parchmentmc.org" }
-
+        maven {
+            url = "https://api.modrinth.com/maven"
+            content {
+                includeGroup "maven.modrinth"
+            }
+        }
         maven {
             url = "https://www.cursemaven.com"
             allowInsecureProtocol = true
         }
     }
 
-    tasks.withType(JavaCompile) {
+    tasks.withType(JavaCompile).configureEach {
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release = 21
     }
 
     java {
         withSourcesJar()
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
