@@ -23,11 +23,9 @@ repositories {
 sourceSets {
     main {
         java {
-            srcDir 'src/main/java'
             srcDir '../common/src/main/java'
         }
         resources {
-            srcDir 'src/main/resources'
             srcDir '../common/src/main/resources'
             exclude 'architectury.common.json'
             exclude '**/*.accesswidener'
