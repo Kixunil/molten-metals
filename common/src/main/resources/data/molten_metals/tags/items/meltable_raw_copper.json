@@ -6,10 +6,6 @@
     {
       "id": "#c:copper_ores",
       "required": false
-    },
-    {
-      "id": "#spelunkery:copper_ores",
-      "required": false
     }
   ]
 }

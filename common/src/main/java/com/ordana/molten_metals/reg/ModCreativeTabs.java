@@ -17,8 +17,8 @@ import java.util.function.Supplier;
 public class ModCreativeTabs {
 
     public static final RegSupplier<CreativeModeTab> MOD_TAB = !CommonConfigs.CREATIVE_TAB.get() ? null :
-            RegHelper.registerCreativeModeTab(MoltenMetals.res("spelunkery"),
-                    (c) -> c.title(Component.translatable("itemGroup.spelunkery"))
+            RegHelper.registerCreativeModeTab(MoltenMetals.res("molten_metals"),
+                    (c) -> c.title(Component.translatable("itemGroup.molten_metals"))
                             .icon(() -> ModItems.MOLTEN_IRON_BUCKET.get().getDefaultInstance()));
 
 
@@ -107,8 +107,8 @@ public class ModCreativeTabs {
             ModBlocks.MOLTEN_TIN_INGOT_MOLD, ModBlocks.MOLTEN_BRONZE_INGOT_MOLD, ModBlocks.MOLTEN_STEEL_INGOT_MOLD
         );
 
-        //SPELUNKERY
-        afterML(e, ModItems.MOLTEN_BRASS_BUCKET.get(), CreativeModeTabs.TOOLS_AND_UTILITIES, "spelunkery",
+        //MERCURY
+        after(e, ModItems.MOLTEN_BRASS_BUCKET.get(), CreativeModeTabs.TOOLS_AND_UTILITIES,
                 ModItems.MOLTEN_MERCURY_BUCKET
         );
     }
