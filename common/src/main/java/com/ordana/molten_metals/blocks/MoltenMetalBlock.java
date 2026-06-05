@@ -1,4 +1,4 @@
-package com.ordana.molten_metals.neoforge.blocks;
+package com.ordana.molten_metals.blocks;
 
 import com.ordana.molten_metals.reg.ModBlocks;
 import com.ordana.molten_metals.reg.ModFluids;

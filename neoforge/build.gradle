@@ -1,108 +1,117 @@
 plugins {
-    id "com.github.johnrengelman.shadow"
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.107'
+    id 'idea'
 }
 
-architectury {
-    platformSetupLoomIde()
-    neoForge()
+base {
+    archivesName = "${mod_id}-neoforge"
 }
 
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
-}
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-configurations {
-    common {
-        canBeResolved = true
-        canBeConsumed = false
+repositories {
+    maven {
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
     }
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentNeoForge.extendsFrom common
+}
 
-    shadowBundle {
-        canBeResolved = true
-        canBeConsumed = false
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+            srcDir '../common/src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+            srcDir '../common/src/main/resources'
+            exclude 'architectury.common.json'
+            exclude '**/*.accesswidener'
+        }
+    }
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        minecraftVersion = project.parchment_minecraft_version
+        mappingsVersion = project.parchment_mappings_version
+    }
+
+    runs {
+        client {
+            client()
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources').absolutePath, '--existing', file('src/main/resources').absolutePath, '--existing', file('../common/src/main/resources').absolutePath
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
     }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-processResources {
-    inputs.property "version", project.version
-    inputs.property "moonlight_version", rootProject.moonlight_version
-    inputs.property "create_version", rootProject.create_version
-
-    filesMatching("META-INF/neoforge.mods.toml") {
-        expand "version": project.version,
-                "moonlight_version": rootProject.moonlight_version,
-                "create_version": rootProject.create_version
-    }
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
 }
 
-shadowJar {
-    exclude "fabric.mod.json"
-    exclude "architectury.common.json"
-
-    configurations = [project.configurations.shadowBundle]
-    archiveClassifier = "dev-shadow"
+dependencies {
+    implementation "maven.modrinth:moonlight:${moonlight_version}"
 }
 
-remapJar {
-    inputFile.set shadowJar.archiveFile
-    dependsOn shadowJar
-    archiveClassifier = "neoforge"
-}
-
-jar {
-    archiveClassifier = "dev"
-}
-
-sourcesJar {
-    def commonSources = project(":common").sourcesJar
-    dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
-}
-
-components.java {
-    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
-        skip()
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            version                : mod_version,
+            minecraft_version_range: minecraft_version_range,
+            loader_version_range   : loader_version_range,
+            neo_version            : neo_version,
+            moonlight_version      : moonlight_version,
+            create_version         : create_version,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand replaceProperties
     }
 }
 
 publishing {
     publications {
-        mavenNeoForge(MavenPublication) {
-            artifactId = rootProject.mod_id + "-" + project.name
+        register('mavenJava', MavenPublication) {
             from components.java
         }
     }
+}
 
-    repositories {
-        maven {
-            url = "https://www.cursemaven.com"
-            allowInsecureProtocol = true
-        }
-        maven {
-            name = "TerraformersMC"
-            url = "https://maven.terraformersmc.com/releases"
-        }
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
     }
-}
-
-repositories {
-    maven { url "https://maven.neoforged.net/releases" }
-    maven { url "https://maven.terraformersmc.com/releases" }
-    mavenCentral()
-}
-
-dependencies {
-    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
-    modImplementation "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
-    modImplementation "maven.modrinth:moonlight:${rootProject.moonlight_version}"
-
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowBundle(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive false }
-
-    implementation 'org.jetbrains:annotations:24.1.0'
 }
