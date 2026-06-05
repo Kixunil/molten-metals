@@ -1,5 +1,5 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "modid": "etcetera",
       "type": "neoforge:mod_loaded"
